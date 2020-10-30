@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>First to join the Avengers phone book:</h1>
+    {% for avenger in list_avengers %}
+        <h3>{{ avenger }}</h3>
+    {% endfor %}
+    
+{% endblock content %}

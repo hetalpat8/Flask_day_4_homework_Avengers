@@ -1,0 +1,20 @@
+{% block content %}
+    <header class="banner">
+        <h1 class="header-text">Flask Avengers Phone Book...</h1>
+    </header>
+​
+    <h1>Hello there {{ current_user.name }}</h1>
+    {% if current_user.is_authenticated %}
+        {% for phonenumber in user_phonenumbers %}
+            <div class="container">
+                <h3>
+                    <a href="{{ url_for('phonenumber_detail', phonenumber_id = phonenumber.id) }}">{{ phonenumber.title }}</a>
+                </h3>
+                <p>{{ phonenumber.content }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+    <h2>Nothing to show here...</h2>
+​
+    {% endif %}
+{% endblock content %}

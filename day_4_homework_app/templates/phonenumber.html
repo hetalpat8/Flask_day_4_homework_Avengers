@@ -1,0 +1,26 @@
+<!--day 4-->
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <h1>Add a new phone number</h1>
+        <form method="PHONENUMBER">
+            {{ post_form.hidden_tag() }}
+            <div class="form-group">
+                <fieldset>
+                    {{ phonenumber_form.title.label }}
+                    {{ phonenumber_form.title(class = "form-control", placeholder = "Add a title") }}
+                </fieldset>
+
+                <fieldset>
+                    {{ phonenumber_form.content.label }}
+                    {{ phonenumber_form.content(class = "form-control", placeholder = "Add Your Content") }}
+                </fieldset>
+                {{ post_form.submit(class = "btn btn-success") }}
+            </div>
+        </form>
+    </div>
+
+{% endblock content %}
